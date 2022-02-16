@@ -2,8 +2,8 @@ import React from "react"
 
 const Filter = ({ options, defaultValue, value, onSelect, onInput, query }) => {
   return (
-      <section className="p-2 bg-white rounded shadow-md flex w-full gap-x-4 md:max-w-prose ">
-        <select className="border-deep-carrot-orange"
+      <section className="p-2 bg-white rounded shadow-md flex w-full gap-x-4 md:max-w-prose">
+        <select className="border-deep-carrot-orange rounded p-1"
             value={ value }
             onChange={ event => onSelect(event.target.value) }>
           <option disabled
@@ -16,7 +16,7 @@ const Filter = ({ options, defaultValue, value, onSelect, onInput, query }) => {
                 { option.name }
               </option>) }
         </select>
-        <input className="w-full rounded px-2 text-gray-400 placeholder:italic placeholder:text-slate-400"
+        <input className="w-full rounded px-2 py-1 text-gray-400 placeholder:italic placeholder:text-slate-400"
             type="text"
             value={ query }
             onChange={ onInput }

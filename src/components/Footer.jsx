@@ -2,7 +2,7 @@ import React from "react"
 
 export default function Footer() {
   return (
-    <footer className='grow-0 text-center p-4 md:p-8'>
+    <footer className='grow-0 text-center p-4 md:p-8 w-full'>
       <p className='text-sm md:text-base'>
         Данные предоставлены{" "}
         <a

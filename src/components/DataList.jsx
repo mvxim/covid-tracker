@@ -1,42 +1,26 @@
-import React from "react"
-import Filter from "./Filter"
+import React from 'react';
+import Country from './Country';
 
-export default function DataList({
-  countries, date, options, value, onSelect, onInput, query
-}) {
+const DataList = ({ filteredCountryList }) => {
   return (
-      <section className="flex flex-col gap-y-5">
-        <Filter options={ options }
-            value={ value }
-            onSelect={ onSelect }
-            defaultValue="Сортировка по.."
-            query={ query }
-            onInput={ onInput }
-        />
-        { countries
-            ? (
-                <>
-                  <h2 className="text-base md:text-xl font-bold text-valhalla">Подтвержденные случаи COVID-19 за { date } </h2>
-                  
-                  <ul className="p-4 bg-white rounded md:max-w-prose w-full shadow-md">
-                    
-                    { countries.map(country =>
-                        country["NewConfirmed"] !== 0 &&
-                        <li className={ "py-1 flex  justify-between w-full" }
-                            key={ country.ID }>
-                          <div>
-                            { country["Country"] }
-                          </div>
-                          <div>
-                            { country["NewConfirmed"] }
-                          </div>
-                        </li>
-                    ) }
-                  </ul>
-                </>)
-            : (
-                <h2 className="text-xl md:text-2xl font-bold text-valhalla pb-6">Cтраны не загрузились. Попробуйте обновить страницу, или вернуться позже 😔</h2>)
-        }
-      </section>
-  )
-}
+      filteredCountryList.length > 0 ?
+          <>
+            <ul
+                className="p-4 bg-white rounded md:max-w-prose w-full shadow-md">
+              {
+                filteredCountryList.map(country =>
+                    country['NewConfirmed'] !== 0 &&
+                    <Country key={ country.ID }
+                        countryData={ country }/>
+                )
+              }
+            </ul>
+          </>
+          :
+          <p className="text-valhalla pb-6">
+            Такой страны в списке нет. Может, опечатались?
+          </p>);
+  
+};
+
+export default DataList;
