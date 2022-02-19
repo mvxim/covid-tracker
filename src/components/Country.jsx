@@ -1,4 +1,5 @@
 import React from 'react';
+import useNumbersWithCommas from '../hooks/useNumbersWithCommas';
 
 const Country = ({countryData}) => {
   return (
@@ -7,7 +8,7 @@ const Country = ({countryData}) => {
           { countryData["Country"] }
         </div>
         <div>
-          { countryData["NewConfirmed"] }
+          { useNumbersWithCommas(countryData["NewConfirmed"]) }
         </div>
       </li>
   );

@@ -1,10 +1,8 @@
-import React from "react"
+const Filter = ({ options, defaultValue, onSelect, onInput, query }) => {
 
-const Filter = ({ options, defaultValue, value, onSelect, onInput, query }) => {
   return (
-      <section className="p-2 bg-white rounded shadow-md flex w-full gap-x-4 md:max-w-prose">
+      <section className="p-2 bg-white rounded shadow-md flex flex-col justify-start gap-y-2 w-full gap-x-4 md:max-w-prose md:flex-row ">
         <select className="border-deep-carrot-orange rounded p-1"
-            value={ value }
             onChange={ event => onSelect(event.target.value) }>
           <option disabled
               value="">
@@ -17,6 +15,7 @@ const Filter = ({ options, defaultValue, value, onSelect, onInput, query }) => {
               </option>) }
         </select>
         <input className="w-full rounded px-2 py-1 text-gray-400 placeholder:italic placeholder:text-slate-400"
+            inputMode="none"
             type="text"
             value={ query }
             onChange={ onInput }

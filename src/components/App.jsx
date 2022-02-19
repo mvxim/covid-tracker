@@ -5,12 +5,12 @@ import Header from './Header';
 import Main from './Main';
 
 function App() {
-  
+
   const [ countries, setCountries ] = useState([]);
   const [ global, setGlobal ] = useState({});
   const [ date, setDate ] = useState('');
   const [ isLoading, setIsLoading ] = useState(true);
-  
+
   const formatDate = (rawDate) => {
     const date = new Date(rawDate).toLocaleDateString(
         'ru-ru',
@@ -22,7 +22,7 @@ function App() {
     );
     setDate(date);
   };
-  
+
   const fetchInitialData = useCallback(async () => {
     try {
       const countries = await api.getCountries();
@@ -30,7 +30,6 @@ function App() {
         setCountries(countries['Countries']);
         setGlobal(countries['Global']);
         formatDate(countries['Date']);
-        setIsLoading(false);
       }
     } catch (err) {
       console.log(err);
@@ -38,13 +37,13 @@ function App() {
       setIsLoading(false);
     }
   }, []);
-  
-  
+
+
   useEffect(() => {
     fetchInitialData();
-  }, [fetchInitialData]);
-  
-  
+  }, []);
+
+
   return (
       <div className="min-h-screen flex flex-col bg-gray-100 items-center text">
         <Header date={ date }/>
