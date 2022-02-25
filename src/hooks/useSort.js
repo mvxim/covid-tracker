@@ -10,7 +10,6 @@ const useSort = (countries) => {
   ];
 
   let sortedCountries = useMemo(() => {
-    console.log('Отработала сортировка');
     let resultOfSort;
     switch (selectedSort) {
       case 'Country':
