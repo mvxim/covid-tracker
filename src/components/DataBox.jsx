@@ -2,7 +2,7 @@ import useNumbersWithCommas from '../hooks/useNumbersWithCommas';
 
 const DataBox = ({global}) => {
   const {"NewConfirmed": newConfirmed, "NewDeaths":newDeaths, "TotalDeaths": totalDeaths, "TotalConfirmed": totalConfirmed} = global
-  
+
   return (
       <article className="flex flex-col gap-y-4 md:flex-row gap-x-4 justify-center w-full max-w-prose ">
         {/* box 1 */}

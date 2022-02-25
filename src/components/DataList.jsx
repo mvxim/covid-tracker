@@ -7,7 +7,7 @@ const DataList = ({ filteredCountryList }) => {
       filteredCountryList.length > 0 ?
           <>
             <ul
-                className="p-4 bg-white rounded md:max-w-prose w-full shadow-md">
+                className="md:max-w-prose w-full">
               {
                 filteredCountryList.map(country =>
                     country['NewConfirmed'] !== 0 &&

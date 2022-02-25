@@ -45,7 +45,7 @@ function App() {
 
 
   return (
-      <div className="min-h-screen flex flex-col bg-gray-100 items-center text">
+      <div className="min-h-screen flex flex-col bg-white items-center text">
         <Header date={ date }/>
         <Main countries={ countries }
             global={ global }

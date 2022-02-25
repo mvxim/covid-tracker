@@ -13,7 +13,7 @@ export default function Data({
   return (
       <section className="flex flex-col gap-y-5 items-center">
         <h2 className="text-base md:text-xl font-bold text-valhalla">
-          Заболеваемость COVID-19 в мире за { date }
+          Заболеваемость&nbsp;COVID-19 в&nbsp;мире за&nbsp;{ date }
         </h2>
         {
           global && <DataBox global={global}/>
@@ -22,8 +22,8 @@ export default function Data({
           countries
             ? (
                 <>
-                  <h2 className="text-base md:text-xl font-bold text-valhalla">
-                    Подтвержденные случаи в разбивке по странам
+                  <h2 className="text-base md:text-lg font-medium text-valhalla">
+                    Подтвержденные&nbsp;случаи в&nbsp;разбивке по&nbsp;странам
                   </h2>
                   <Filter options={ sortOptions }
                       onSelect={ setSelectedSort }
@@ -36,7 +36,7 @@ export default function Data({
                       filteredCountryList={ sortedAndSearchedCountries }/>
                 </>)
             : (<h2 className="text-xl md:text-2xl font-bold text-valhalla pb-6">
-              Cтраны не загрузились. Попробуйте обновить страницу, или вернуться позже 😔
+              Cтраны не&nbsp;загрузились. Попробуйте обновить&nbsp;страницу, или&nbsp;вернуться&nbsp;позже 😔
             </h2>)
         }
       </section>
