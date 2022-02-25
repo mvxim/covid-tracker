@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "./static/css/main.61833e53.css",
-    "main.js": "./static/js/main.3aa353ee.js",
+    "main.css": "./static/css/main.00b19df7.css",
+    "main.js": "./static/js/main.b49c0589.js",
     "static/media/loader.gif": "./static/media/loader.9c7cd866c7fa25391ccd.gif",
     "static/media/covid-19.svg": "./static/media/covid-19.e695e973584e1f85830678d48504d204.svg",
     "index.html": "./index.html",
-    "main.61833e53.css.map": "./static/css/main.61833e53.css.map",
-    "main.3aa353ee.js.map": "./static/js/main.3aa353ee.js.map"
+    "main.00b19df7.css.map": "./static/css/main.00b19df7.css.map",
+    "main.b49c0589.js.map": "./static/js/main.b49c0589.js.map"
   },
   "entrypoints": [
-    "static/css/main.61833e53.css",
-    "static/js/main.3aa353ee.js"
+    "static/css/main.00b19df7.css",
+    "static/js/main.b49c0589.js"
   ]
 }
