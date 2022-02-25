@@ -8,7 +8,7 @@ export default function Data({
   global, countries, date,
 }) {
   const [ searchQuery, setSearchQuery ] = useState('');
-  const { sortedCountries, sortOptions, setSelectedSort } = useSort(countries);
+  const { sortedCountries, sortOptions, selectedSort, setSelectedSort } = useSort(countries);
 
   const handleSearch = (event) => {
     setSearchQuery(event.target.value);
@@ -35,6 +35,7 @@ export default function Data({
                   </h2>
                   <Filter options={ sortOptions }
                       onSelect={ setSelectedSort }
+                      value={selectedSort}
                       defaultValue="Сортировка по.."
                       query={ searchQuery }
                       onInput={ handleSearch }

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 
 const useSort = (countries) => {
   const [ selectedSort, setSelectedSort ] = useState('');
@@ -9,32 +9,35 @@ const useSort = (countries) => {
     { value: 'CasesDescending', name: 'По убыванию' },
   ];
 
-  let sortedCountries;
+  let sortedCountries = useMemo(() => {
+    console.log('Отработала сортировка');
+    let resultOfSort;
+    switch (selectedSort) {
+      case 'Country':
+        resultOfSort = [ ...countries ].sort(
+            (a, b) => a['Country'].localeCompare(b['Country']));
+        break;
+      case 'CasesDescending':
+        resultOfSort = [ ...countries ].sort(
+            (a, b) => b['NewConfirmed'] - a['NewConfirmed']);
+        break;
+      case 'CasesAscending':
+        resultOfSort = [ ...countries ].sort(
+            (a, b) => a['NewConfirmed'] - b['NewConfirmed']);
+        break;
+      default:
+        resultOfSort = countries;
 
-  switch (selectedSort) {
-    case 'Country':
-      sortedCountries = [ ...countries ].sort(
-          (a, b) => a['Country'].localeCompare(b['Country']));
-      break;
-    case 'CasesDescending':
-      sortedCountries = [ ...countries ].sort(
-          (a, b) => b['NewConfirmed'] - a['NewConfirmed']);
-      break;
-    case 'CasesAscending':
-      sortedCountries = [ ...countries ].sort(
-          (a, b) => a['NewConfirmed'] - b['NewConfirmed']);
-      break;
-    default:
-      sortedCountries = countries;
-
-  }
+    }
+    return resultOfSort
+  }, [selectedSort, countries])
 
   return {
     sortedCountries,
     sortOptions,
+    selectedSort,
     setSelectedSort
   }
-
 }
 
 export default useSort

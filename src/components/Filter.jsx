@@ -1,9 +1,10 @@
-const Filter = ({ options, defaultValue, onSelect, onInput, query }) => {
+const Filter = ({ options, defaultValue, value, onSelect, onInput, query }) => {
 
   return (
       <section className="p-2 bg-white rounded shadow-md flex flex-col justify-start gap-y-2 w-full gap-x-4 md:max-w-prose md:flex-row ">
         <select className="border-deep-carrot-orange rounded p-1"
-            onChange={ event => onSelect(event.target.value) }>
+            onChange={ event => onSelect(event.target.value) }
+            value={value}>
           <option disabled
               value="">
             { defaultValue }
