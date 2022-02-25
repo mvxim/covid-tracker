@@ -12,8 +12,7 @@ class Api {
   }
 
   getCountries() {
-    return fetch(this.summaryUrl).then(this._onResponse)
-    .catch(err => console.log(err))
+    return fetch(this.summaryUrl).then(this._onResponse).catch(err => console.log(err))
   }
 }
 
