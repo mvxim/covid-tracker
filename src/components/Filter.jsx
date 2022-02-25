@@ -16,7 +16,6 @@ const Filter = ({ options, defaultValue, value, onSelect, onInput, query }) => {
               </option>) }
         </select>
         <input className="w-full rounded px-2 py-1 text-gray-400 placeholder:italic placeholder:text-slate-400"
-            inputMode="none"
             type="text"
             value={ query }
             onChange={ onInput }
