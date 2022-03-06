@@ -4,7 +4,6 @@ const useSearch = (sortedCountries) => {
   const [ searchQuery, setSearchQuery ] = useState('');
 
   const sortedAndSearchedCountries = useMemo(()=>{
-    console.log('Сработал поиск');
     const searchResults = sortedCountries.filter(
       country => country['Country'].toLowerCase()
           .includes(searchQuery.toLowerCase()))
